@@ -1,0 +1,38 @@
+<header class="header">
+    <app-logo></app-logo>
+</header>
+
+<main class="main">
+    <main class="main-form">
+        <form *ngIf="formConnect" [formGroup]="formConnect">
+    
+            <mat-form-field appearance="standard">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="user">
+                <mat-icon matSuffix color="accent">person_pin</mat-icon>
+                <mat-error color="error" *ngIf="formConnect.get('user').hasError('minlength')">Nome deve ter no minimo 3 caracteres</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field appearance="standard">
+                <mat-label>Nome da sala</mat-label>
+                <input matInput class="room" formControlName="room">
+                <mat-icon matSuffix color="accent">style</mat-icon>
+                <mat-error color="error" *ngIf="formConnect.get('room').hasError('required')">Nome da sala é obrigatório</mat-error>
+                <mat-error color="error" *ngIf="formConnect.get('room').hasError('minlength')">Nome da sala deve ter no minimo 3 caracteres</mat-error>
+                <mat-error color="error" *ngIf="formConnect.get('room').hasError('roomNotExist')">Sala não existe</mat-error>
+            </mat-form-field>
+    
+        </form>
+    </main>
+    
+    <footer class="footer-buttons">
+        <section class="btns">
+            <button mat-stroked-button color="accent" (click)="connectObserver()">Observar</button>
+            <button mat-flat-button color="primary" (click)="connectUser()">Entrar</button>
+        </section>
+    
+        <section class="btn">
+            <a [routerLink]="[ '/home/create' ]" mat-button color="primary">Criar Sala</a>
+        </section>
+    </footer>
+</main>

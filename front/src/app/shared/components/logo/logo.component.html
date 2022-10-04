@@ -1,0 +1,29 @@
+<ng-container *ngIf="isNormal; then logoNormal; else logoSimple"></ng-container>
+
+<ng-template #logoNormal>
+
+    <main class="logo-normal">
+        <section class="logo">
+            <img src="../../../../../assets/imgs/logo.svg">
+        </section>
+        <section class="title">
+            <h1 class="text-title">Planning<span>Poker</span></h1>
+        </section>
+    </main>
+    
+</ng-template>
+
+
+<ng-template #logoSimple>
+
+    <main class="logo-simple" (click)="goHome()">
+        <section class="logo">
+            <img src="../../../../../assets/imgs/logo.svg">
+        </section>
+        <section class="title">
+            <h1 class="text-title">Planning<span>Poker</span></h1>
+        </section>
+    </main>
+    
+</ng-template>
+

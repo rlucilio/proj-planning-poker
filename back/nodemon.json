@@ -1,0 +1,12 @@
+{
+    "ignore": [
+        "*.js",
+        "*.spec.ts"
+    ],
+    "delay": "2500",
+    "ext": "ts",
+    "watch": [
+        "src"
+    ],
+    "exec": "npx ts-node ./src/app.ts"
+}

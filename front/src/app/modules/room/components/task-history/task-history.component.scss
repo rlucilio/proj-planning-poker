@@ -1,0 +1,74 @@
+@import '../../../../scss/colors.scss';
+@import '../../../../scss/animations.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &>.header-task-history {
+        width: 100%;
+
+        .header-task-history-title {
+            text-align: center;
+            font-weight: 100;
+        }
+    }
+
+    &>.main-task-history{
+        width: 100%;
+        height: calc(100% - 30px);
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+
+        .main-task-history-list {
+            overflow-x: auto;
+
+            .main-task-history-list-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                box-shadow: 0px 0px 22px -7px rgba(0, 0, 0, 0.75);
+                border-radius: 8px;
+                box-sizing: border-box;
+                margin: 8px;
+                
+                p {
+                   font-size: 12px;
+
+                   &.main-task-history-list-item-hour{
+                       color: map-get($map: $pallet-collors-primary, $key: 500);
+                       width: 85px;
+                   }
+                }
+            }
+
+            &.task-reveal{
+                .task {
+                    animation-name: slide-in-bottom;
+                    animation-duration: 0.5s;
+                    animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                    animation-fill-mode: both;
+                    animation-delay: 1s;
+                }
+            }
+        }
+
+        .main-task-history-total{
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                font-weight: 100;
+
+                &.main-task-history-total-value {
+                    color: map-get($map: $pallet-collors-primary, $key: 500);
+                }
+            }
+
+        }
+    }
+}

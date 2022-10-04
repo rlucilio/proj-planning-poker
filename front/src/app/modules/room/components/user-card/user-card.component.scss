@@ -1,0 +1,63 @@
+@import '../../../../scss/colors.scss';
+@import '../../../../scss/animations.scss';
+
+:host {
+
+    width: 100%;
+    height: 72px;
+    
+    
+    &>.main-user-card {
+
+        &.user-voted {
+            animation-name: blink-1;
+            animation-timing-function: ease;
+            animation-duration: 0.6s;
+            animation-fill-mode: both;
+        }
+
+        &.vote{
+            background: map-get($map: $pallet-collors-primary, $key: 500);
+        }
+
+        box-shadow: 0px 0px 22px -10px rgba($color: black, $alpha: 0.75);
+        border-radius: 8px;
+        padding-right: 8px;
+
+        height: 100%;
+        display: flex;
+        box-sizing: border-box;
+        margin: 8px;
+        justify-content: space-between;
+        align-items: center;
+
+        .img {
+            display: flex;
+            transform: translateX(-10px);
+            align-items: center;
+
+            img {
+                height: 60px;
+            }
+
+            p {
+                word-break: break-word;
+                font-size: 12px;
+            }
+        }
+
+        .card {
+            .body {
+                width: 19px;
+                background: white;
+                text-align: center;
+                border-radius: 4px;
+
+                p {
+                    color: map-get($map: $pallet-collors-primary, $key: 500);
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,100&display=swap');
+@import './colors.scss';
+
+@mixin typography {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+        color: map-get($map: $pallet-collors-primary, $key: 50);
+
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    mat-form-field > div > div.mat-form-field-flex > div.mat-form-field-infix > input {
+        color: map-get($map: $pallet-collors-secondary, $key: 500);
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .text-title {
+        font-family: 'Rock Salt', cursive;
+        color: map-get($map: $pallet-collors-primary, $key: 500);
+
+        &>span {
+            color: map-get($map: $pallet-collors-secondary, $key: 500);
+        }
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    body {
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+    }
+
+}

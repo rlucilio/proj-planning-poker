@@ -1,0 +1,26 @@
+@import '../../../../scss/colors.scss';
+
+:host {
+
+    &>.task-create-dialog-header{
+        .task-create-dialog-header-title{
+            color: map-get($map: $pallet-collors-primary, $key: 500);
+        }
+    }
+
+    &>.task-create-dialog-main{
+        .task-create-dialog-main-form{
+            display: flex;
+            flex-direction: column;
+
+            mat-form-field {
+                width: 360px;
+            }
+        }
+    }
+
+    &>.task-create-dialog-footer{
+        display: flex;
+        justify-content: flex-end;
+    }
+}

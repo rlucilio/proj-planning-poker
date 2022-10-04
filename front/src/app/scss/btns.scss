@@ -1,0 +1,13 @@
+@import './animations.scss';
+
+@mixin img-btn {
+    cursor: pointer;
+    
+    &:hover{
+        transition-property: transform;
+        transition-duration: .3s;
+        transition-timing-function: linear;
+        transform: scale(1.1);
+    }
+}
+

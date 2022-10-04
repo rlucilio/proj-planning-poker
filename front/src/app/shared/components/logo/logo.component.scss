@@ -1,0 +1,42 @@
+:host {
+    &>.logo-normal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &>.title {
+            transform: translateY(-46px);
+        }
+
+        @media (max-height: 600px) {
+            flex-direction: row;
+
+            &>.title {
+                transform: none
+            }
+        }
+    }
+
+    &>.logo-simple {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &>.logo{
+            img {
+                height: 40px;
+            }
+        }
+
+        &>.title {
+            transform: translateY(-4px);
+
+            h1 {
+                font-size: 16px;
+            }
+        }
+    }
+}

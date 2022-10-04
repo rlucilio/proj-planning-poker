@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import './app/scss/colors.scss';
+@import './app/scss/font.scss';
+@import './app/scss/loading.scss';
+
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+
+$poker-app-primary: mat-palette($pallet-collors-primary);
+$poker-app-accent: mat-palette($pallet-collors-secondary, 500, 300, 700);
+$poker-app-warn: mat-palette($mat-red);
+$poker-app-theme: mat-light-theme($poker-app-primary, $poker-app-accent, $poker-app-warn);
+@include mat-core();
+@include angular-material-theme($poker-app-theme);
+@include typography();
+@include loading-init();

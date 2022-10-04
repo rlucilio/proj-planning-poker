@@ -1,0 +1,17 @@
+<header class="header-task">
+    <h3 class="header-task-title">{{task?.title}}</h3>
+    <p class="header-task-description">{{task?.description}}</p>
+</header>
+
+<main class="main-task">
+    <section class="main-task-votes card-result-reveal-user">
+        <ng-container *ngFor="let vote of task?.votes">
+            <app-vote-card-user class="card" [value]="vote?.votting" [player]="vote?.user?.name"></app-vote-card-user>
+        </ng-container>
+    </section>
+
+    <section class="main-task-result" *ngIf="task?.resultVoting" [ngClass]="{'card-result-reveal': task?.resultVoting}">
+        <app-vote-card [typeCard]="'sword'" [value]="task?.resultVoting" class="card"></app-vote-card>
+        <p class="main-task-result-label">{{labelResult}}</p>
+    </section>
+</main>

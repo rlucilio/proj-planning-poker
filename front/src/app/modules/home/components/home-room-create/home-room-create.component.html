@@ -1,0 +1,113 @@
+<header>
+    <app-logo></app-logo>
+</header>
+
+<main class="container-create-room">
+    <ng-scrollbar>
+        <mat-horizontal-stepper [linear]="true">
+            <mat-step [stepControl]="formRoom">
+                <form class="form-room" [formGroup]="formRoom">
+                    <ng-template matStepLabel>Sala</ng-template>
+                    <section>
+                        <mat-form-field>
+                            <mat-label>Nome da sala</mat-label>
+                            <input matInput formControlName="nameRoom">
+                            <mat-error color="error" *ngIf="formRoom.get('nameRoom').hasError('required')">Nome da sala
+                                é obrigatório</mat-error>
+                            <mat-error color="error" *ngIf="formRoom.get('nameRoom').hasError('minlength')">Nome da sala
+                                deve ter no minimo 3 caracteres</mat-error>
+                            <mat-error color="error" *ngIf="formRoom.get('nameRoom').hasError('roomExist')">Sala já
+                                existe</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Descrição da sala</mat-label>
+                            <input matInput formControlName="description">
+                            <mat-error color="error" *ngIf="formRoom.get('description').hasError('maxlength')">Descrição não pode passar de 60 caracteres</mat-error>
+                        </mat-form-field>
+                    </section>
+
+                    <section>
+                        <mat-slide-toggle color="primary" formControlName="observables">Permitir observadores?
+                        </mat-slide-toggle>
+                    </section>
+                    <button class="btns" mat-button matStepperNext color="primary">Próximo</button>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="formTask">
+                <ng-template matStepLabel>Tasks</ng-template>
+                <form class="form-task" [formGroup]="formTask">
+                    <section>
+                        <mat-slide-toggle color="primary" formControlName="timeout">Definir tempo limite?
+                        </mat-slide-toggle>
+                    </section>
+
+                    <section *ngIf="formTask.get('timeout').value">
+                        <mat-form-field>
+                            <mat-label>Tempo limite em minutos</mat-label>
+                            <input matInput type="number" formControlName="timeForTimeout" placeholder="1">
+                            <mat-error color="error" *ngIf="formTask.get('timeForTimeout').hasError('min')">Tempo mínimo
+                                é de 1 minuto</mat-error>
+                        </mat-form-field>
+                    </section>
+
+                    <section>
+                        <mat-slide-toggle color="primary" formControlName="history">Manter histórico das tasks?
+                        </mat-slide-toggle>
+                    </section>
+
+                    <section class="btns">
+                        <button mat-button matStepperPrevious color="accent">Voltar</button>
+                        <button mat-button matStepperNext color="primary">Próximo</button>
+                    </section>
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="formVotes">
+                <ng-template matStepLabel>Votos</ng-template>
+                <form class="form-task" [formGroup]="formVotes">
+
+                    <section>
+                        <mat-slide-toggle color="primary" formControlName="alterVotesAfter">Alterar votos após virar as
+                            cartas?</mat-slide-toggle>
+                    </section>
+
+                    <section>
+                        <mat-slide-toggle color="primary" formControlName="autoFlip">Mostrar o resultado automaticamente
+                            após todos votarem?
+                        </mat-slide-toggle>
+                    </section>
+
+                    <section>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Tipo de voto</mat-label>
+                            <mat-select formControlName="typeVote">
+                                <mat-option value="room_hours">Horas</mat-option>
+                                <mat-option value="room_scores">Pontos</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </section>
+
+                    <section class="btns">
+                        <button mat-button matStepperPrevious color="accent">Voltar</button>
+                        <button mat-button matStepperNext color="primary">Próximo</button>
+                    </section>
+                </form>
+            </mat-step>
+
+            <mat-step>
+                <ng-template matStepLabel>Confirmação</ng-template>
+
+                <section class="confirm-room">
+                    <p>Criar sala?</p>
+
+                    <section class="btns">
+                        <a mat-stroked-button [routerLink]="[ '/home' ]" color="accent">Cancelar</a>
+                        <button mat-flat-button color="primary" class="btn-confirm" (click)="createRoom()">Criar
+                            Sala</button>
+                    </section>
+                </section>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </ng-scrollbar>
+</main>

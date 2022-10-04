@@ -1,0 +1,23 @@
+<main class="main-vote-card-user">
+
+
+    <ng-container *ngIf="!value; then notVoted; else voted"></ng-container>
+    <ng-template #notVoted>
+        <section class="main-vote-card-user-back-card">
+            <img src="../../../../../assets/imgs/logo.svg">
+        </section>
+    </ng-template>
+    <ng-template #voted>
+        <section class="main-vote-card-user-front-card">
+            <p>{{value}}</p>
+        </section>
+    </ng-template>
+    
+
+
+    <section class="main-vote-card-user-name">
+        <p>
+            {{player}}
+        </p>
+    </section>
+</main>

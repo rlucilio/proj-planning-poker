@@ -1,0 +1,26 @@
+<header class="task-create-dialog-header">
+    <h1 mat-dialog-title class="task-create-dialog-header-title">Nova Task</h1>
+</header>
+
+<main mat-dialog-content class="task-create-dialog-main">
+    <form class="task-create-dialog-main-form" [formGroup]="formTask">
+        <mat-form-field>
+            <mat-label>Nome da task</mat-label>
+            <input matInput formControlName="title">
+            <mat-error color="error" *ngIf="formTask.get('title').hasError('required')">Titulo para a atividade é obrigatório</mat-error>
+            <mat-error color="error" *ngIf="formTask.get('title').hasError('minlength')">Titulo deve ter no minimo 3 caracteres</mat-error>
+            <mat-error color="error" *ngIf="formTask.get('title').hasError('maxlength')">Titulo não pode passar de 120 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Descrição da task</mat-label>
+            <textarea matInput cols="30" rows="5" maxlength="240" formControlName="description"></textarea>
+            <mat-error color="error" *ngIf="formTask.get('title').hasError('description')">Descrição não pode passar de 120 caracteres</mat-error>
+        </mat-form-field>
+    </form>
+</main>
+
+<footer mat-dialog-actions class="task-create-dialog-footer">
+    <button mat-button (click)="cancelTask()">Cancelar</button>
+    <button mat-button color="primary" [disabled]="!formTask.valid" (click)="createTask()">Criar task</button>
+</footer>

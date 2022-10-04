@@ -1,0 +1,28 @@
+<header class="header-task-history">
+    <h3 class="header-task-history-title">Histórico de tasks</h3>
+</header>
+    
+<main class="main-task-history">
+    <section class="main-task-history-list task-reveal">
+        <ng-container *ngFor="let task of tasks">
+            <ng-container *ngIf="task?.resultVoting">
+                <section class="main-task-history-list-item task">
+                    <p class="main-task-history-list-item-title">{{task?.title}}</p>
+                    <p class="main-task-history-list-item-hour">
+                        {{task?.resultVoting}} {{(task.resultVoting < 1 && task.resultVoting > 0) ? 'Minutos' : 'Horas'}}
+                    </p>
+                </section>
+            </ng-container>
+        </ng-container>
+    </section>
+
+    <ng-container *ngIf="total">
+        <section class="main-task-history-total">
+            <p class="main-task-history-total-label">Média total:</p>
+            <p class="main-task-history-total-value">
+                {{total}} {{(total < 1 && total > 0) ? 'Minutos' : 'Horas'}}
+            </p>
+        </section>
+    </ng-container>
+    
+</main>

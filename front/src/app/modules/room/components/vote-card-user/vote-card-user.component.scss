@@ -1,0 +1,49 @@
+@import '../../../../scss/colors.scss';
+
+:host {
+    margin: 8px;
+    box-sizing: border-box;
+
+    &>.main-vote-card-user {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .main-vote-card-user-name p {
+            font-size: 12px;
+            text-align: center;
+            margin: 4px;
+        }
+
+        .main-vote-card-user-back-card {
+            background: map-get($map: $pallet-collors-secondary, $key: 500);
+            border-radius: 5px;
+            box-shadow: 0px 0px 22px -7px rgba(0, 0, 0, 0.75);
+
+
+            img {
+                height: 40px;
+            }
+        }
+
+        .main-vote-card-user-front-card {
+            background: map-get($map: $pallet-collors-secondary, $key: 50);
+            border-radius: 5px;
+            box-shadow: 0px 0px 22px -7px rgba(0, 0, 0, 0.75);
+
+            width: 30px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            p {
+                color: map-get($map: $pallet-collors-primary, $key: 500);
+            }
+        }
+    }
+}
