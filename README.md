@@ -6,10 +6,10 @@
 <p  align="center">Project to help developers estimative tasks</p>
 
 <p  align="center">
-	<img  src="https://img.shields.io/github/languages/count/rlucilio/plan-poker-web?style=for-the-badge&logo=ghost&color=7ED957"/>
-	<img  src="https://img.shields.io/github/languages/top/rlucilio/plan-poker-web?style=for-the-badge&logo=ghost&color=7ED957"/>
-	<img  src="https://img.shields.io/github/languages/code-size/rlucilio/plan-poker-web?style=for-the-badge&logo=ghost&color=7ED957"/>
-	<img  src="https://img.shields.io/github/commit-activity/w/rlucilio/plan-poker-web?style=for-the-badge&logo=ghost&color=7ED957"/>
+	<img  src="https://img.shields.io/github/languages/count/rlucilio/proj-planning-poker?style=for-the-badge&logo=ghost&color=7ED957"/>
+	<img  src="https://img.shields.io/github/languages/top/rlucilio/proj-planning-poker?style=for-the-badge&logo=ghost&color=7ED957"/>
+	<img  src="https://img.shields.io/github/languages/code-size/rlucilio/proj-planning-poker?style=for-the-badge&logo=ghost&color=7ED957"/>
+	<img  src="https://img.shields.io/github/commit-activity/w/rlucilio/proj-planning-poker?style=for-the-badge&logo=ghost&color=7ED957"/>
 </p>
 
 <p  align="center"> 
